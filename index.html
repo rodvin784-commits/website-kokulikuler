@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoFuture - Mengelola Sampah, Mengelola Masa Depan</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome untuk Ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        eco: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-gray-50">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-sm shadow-md transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <i class="fa-solid fa-leaf text-eco-600 text-3xl"></i>
+                    <span class="font-bold text-2xl text-gray-900 tracking-tight">Eco<span class="text-eco-600">Future</span></span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-6 items-center">
+                    <a href="#beranda" class="text-gray-700 hover:text-eco-600 font-medium transition">Beranda</a>
+                    <a href="#tentang" class="text-gray-700 hover:text-eco-600 font-medium transition">Tentang</a>
+                    <a href="#jenis-sampah" class="text-gray-700 hover:text-eco-600 font-medium transition">Jenis Sampah</a>
+                    <a href="#program" class="text-gray-700 hover:text-eco-600 font-medium transition">Program</a>
+                    
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-700 hover:text-eco-600 focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-lg">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="#beranda" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-eco-600 hover:bg-eco-50">Beranda</a>
+                <a href="#tentang" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-eco-600 hover:bg-eco-50">Tentang</a>
+                <a href="#jenis-sampah" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-eco-600 hover:bg-eco-50">Jenis Sampah</a>
+                <a href="#program" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-eco-600 hover:bg-eco-50">Program</a>
+                <a href="#kontak" class="block px-3 py-2 mt-4 text-center rounded-md text-base font-medium bg-eco-600 text-white hover:bg-eco-700">Gabung Sekarang</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="beranda" class="hero-bg h-screen flex items-center justify-center text-center px-4">
+        <div class="max-w-4xl mx-auto text-white">
+            <span class="inline-block py-1 px-3 rounded-full bg-eco-500/20 border border-eco-400 text-eco-100 text-sm font-semibold mb-6 fade-in-up">
+                🌱 Gerakan Nasional Peduli Lingkungan
+            </span>
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight fade-in-up delay-100">
+                Mengelola Sampah, <br>
+                <span class="text-eco-400">Mengelola Masa Depan</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-200 mb-10 max-w-2xl mx-auto fade-in-up delay-200">
+                Setiap tindakan kecil dalam memilah sampah hari ini adalah investasi besar untuk bumi yang lebih bersih, sehat, dan berkelanjutan.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center fade-in-up delay-300">
+                <a href="#jenis-sampah" class="bg-eco-600 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-eco-700 transition shadow-lg hover:shadow-eco-500/40 transform hover:-translate-y-1">
+                    Mulai Belajar
+                </a>
+                <a href="#program" class="bg-white/10 backdrop-blur-md border border-white/30 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/20 transition transform hover:-translate-y-1">
+                    Lihat Program
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tentang Kami (Singkat) -->
+    <section id="tentang" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-eco-600 font-semibold text-lg mb-2">MISI KAMI</h2>
+            <h3 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Edukasi adalah Kunci Perubahan</h3>
+            <p class="text-gray-600 max-w-3xl mx-auto leading-relaxed text-lg">
+                Banyak sampah yang berakhir di TPA atau laut hanya karena kesalahan pemilahan sejak dari rumah. Dengan memahami jenis sampah, kita bisa mengubah "masalah" menjadi "sumber daya" yang bernilai ekonomi dan ekologis.
+            </p>
+        </div>
+    </section>
+
+    <!-- Jenis Sampah (Organik, Anorganik, B3) -->
+    <section id="jenis-sampah" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-eco-600 font-semibold text-lg mb-2">EDUKASI SAMPAH</h2>
+                <h3 class="text-3xl md:text-4xl font-bold text-gray-900">Kenali Jenis Sampahmu</h3>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Pemilahan yang benar sejak dari sumber adalah langkah pertama pengelolaan sampah yang efektif.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Organik -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden border-t-4 border-green-500 hover:shadow-xl transition duration-300">
+                    <div class="bg-green-50 p-8 text-center">
+                        <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fa-solid fa-apple-whole text-green-600 text-3xl"></i>
+                        </div>
+                        <h4 class="text-2xl font-bold text-gray-900">Sampah Organik</h4>
+                        <span class="inline-block mt-2 px-3 py-1 bg-green-100 text-green-800 text-xs font-bold rounded-full">Mudah Terurai</span>
+                    </div>
+                    <div class="p-8">
+                        <p class="text-gray-600 mb-4">Sampah yang berasal dari sisa makhluk hidup dan mudah terurai secara alami oleh mikroorganisme.</p>
+                        <h5 class="font-bold text-gray-800 mb-2">Contoh:</h5>
+                        <ul class="space-y-2 text-gray-600 text-sm mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> Sisa makanan & nasi basi</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> Kulit buah & sayuran</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> Daun kering & ranting</li>
+                        </ul>
+                        <div class="bg-green-50 p-4 rounded-lg border border-green-200">
+                            <p class="text-sm text-green-800 font-semibold"><i class="fa-solid fa-lightbulb mr-2"></i>Solusi: Olah menjadi kompos atau pakan ternak (maggot).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Anorganik -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden border-t-4 border-blue-500 hover:shadow-xl transition duration-300">
+                    <div class="bg-blue-50 p-8 text-center">
+                        <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fa-solid fa-bottle-water text-blue-600 text-3xl"></i>
+                        </div>
+                        <h4 class="text-2xl font-bold text-gray-900">Sampah Anorganik</h4>
+                        <span class="inline-block mt-2 px-3 py-1 bg-blue-100 text-blue-800 text-xs font-bold rounded-full">Sulit Terurai</span>
+                    </div>
+                    <div class="p-8">
+                        <p class="text-gray-600 mb-4">Sampah yang tidak mudah terurai secara alami dan membutuhkan waktu ratusan tahun untuk hancur.</p>
+                        <h5 class="font-bold text-gray-800 mb-2">Contoh:</h5>
+                        <ul class="space-y-2 text-gray-600 text-sm mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-blue-500"></i> Botol & kantong plastik</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-blue-500"></i> Kaleng logam & aluminium</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-blue-500"></i> Kertas & kardus bekas</li>
+                        </ul>
+                        <div class="bg-blue-50 p-4 rounded-lg border border-blue-200">
+                            <p class="text-sm text-blue-800 font-semibold"><i class="fa-solid fa-lightbulb mr-2"></i>Solusi: Pilah, bersihkan, dan setorkan ke Bank Sampah untuk didaur ulang.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- B3 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden border-t-4 border-red-500 hover:shadow-xl transition duration-300">
+                    <div class="bg-red-50 p-8 text-center">
+                        <div class="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fa-solid fa-biohazard text-red-600 text-3xl"></i>
+                        </div>
+                        <h4 class="text-2xl font-bold text-gray-900">Sampah B3</h4>
+                        <span class="inline-block mt-2 px-3 py-1 bg-red-100 text-red-800 text-xs font-bold rounded-full">Berbahaya & Beracun</span>
+                    </div>
+                    <div class="p-8">
+                        <p class="text-gray-600 mb-4">Limbah yang mengandung zat berbahaya, beracun, mudah meledak, atau mencemari lingkungan jika tidak ditangani dengan benar.</p>
+                        <h5 class="font-bold text-gray-800 mb-2">Contoh:</h5>
+                        <ul class="space-y-2 text-gray-600 text-sm mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-red-500"></i> Baterai & aki bekas</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-red-500"></i> Lampu neon/TL & bohlam</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-red-500"></i> Obat kedaluwarsa & pestisida</li>
+                        </ul>
+                        <div class="bg-red-50 p-4 rounded-lg border border-red-200">
+                            <p class="text-sm text-red-800 font-semibold"><i class="fa-solid fa-triangle-exclamation mr-2"></i>Solusi: JANGAN dibuang sembarangan! Kumpulkan di dropbox khusus.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Program Kami -->
+    <section id="program" class="py-20 bg-eco-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-eco-600 font-semibold text-lg mb-2">PROGRAM UNGGULAN</h2>
+                <h3 class="text-3xl md:text-4xl font-bold text-gray-900">Solusi Holistik Pengelolaan Sampah</h3>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-2 border-b-4 border-eco-500">
+                    <div class="w-16 h-16 bg-eco-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-recycle text-eco-600 text-2xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3">Bank Sampah Digital</h4>
+                    <p class="text-gray-600 leading-relaxed">
+                        Aplikasi pintar untuk menabung sampah anorganik. Dapatkan poin yang bisa ditukar dengan uang tunai, voucher belanja, atau pulsa.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-2 border-b-4 border-eco-500">
+                    <div class="w-16 h-16 bg-eco-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-seedling text-eco-600 text-2xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3">Kompos Rumah Tangga</h4>
+                    <p class="text-gray-600 leading-relaxed">
+                        Pelatihan dan penyediaan alat pengolah sampah organik (maggot/black soldier fly) menjadi pupuk cair dan padat berkualitas tinggi.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-2 border-b-4 border-eco-500">
+                    <div class="w-16 h-16 bg-eco-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-users text-eco-600 text-2xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3">Edu-Wisata Lingkungan</h4>
+                    <p class="text-gray-600 leading-relaxed">
+                        Kunjungan interaktif ke fasilitas pengelolaan sampah untuk siswa sekolah dan komunitas agar memahami proses daur ulang secara langsung.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-20 bg-eco-700 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full opacity-10">
+            <i class="fa-solid fa-earth-americas text-[400px] absolute -right-20 -bottom-20 text-white"></i>
+        </div>
+        <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+            <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Siap Menjadi Pahlawan Lingkungan?</h2>
+            <p class="text-eco-100 text-lg mb-10">Bergabunglah dengan ribuan relawan dan mitra kami. Bersama-sama kita bisa menciptakan masa depan yang bebas sampah.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#kontak" class="bg-white text-eco-700 px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition shadow-lg">
+                    Jadi Relawan
+                </a>
+                <a href="#kontak" class="border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/10 transition">
+                    Hubungi Kami
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="kontak" class="bg-gray-900 text-gray-300 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-12">
+                <!-- Brand -->
+                <div class="col-span-1 md:col-span-1">
+                    <div class="flex items-center gap-2 mb-4">
+                        <i class="fa-solid fa-leaf text-eco-500 text-2xl"></i>
+                        <span class="font-bold text-2xl text-white">Eco<span class="text-eco-500">Future</span></span>
+                    </div>
+                    <p class="text-sm leading-relaxed mb-6">
+                        Mengelola sampah, mengelola masa depan. Komitmen kami untuk bumi yang lebih hijau dan berkelanjutan.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-eco-600 transition text-white"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-eco-600 transition text-white"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-eco-600 transition text-white"><i class="fa-brands fa-twitter"></i></a>
+                    </div>
+                </div>
+
+                <!-- Links -->
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-6">Tautan Cepat</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#beranda" class="hover:text-eco-500 transition">Beranda</a></li>
+                        <li><a href="#jenis-sampah" class="hover:text-eco-500 transition">Jenis Sampah</a></li>
+                        <li><a href="#program" class="hover:text-eco-500 transition">Program Kami</a></li>
+                        <li><a href="#kontak" class="hover:text-eco-500 transition">Kontak</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-6">Kontak Kami</h4>
+                    <ul class="space-y-4 text-sm">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot mt-1 text-eco-500"></i>
+                            <span>SMK BAGIMU NEGERIKU</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-phone text-eco-500"></i>
+                            <span>+62 812 3789 2138</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-envelope text-eco-500"></i>
+                            <span>halo@ecofuture</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-6">Berlangganan Info</h4>
+                    <p class="text-sm mb-4">Dapatkan tips pengelolaan sampah terbaru.</p>
+                    <form class="flex flex-col gap-3" onsubmit="event.preventDefault(); alert('Terima kasih telah berlangganan!');">
+                        <input type="email" placeholder="Alamat Email Anda" class="bg-gray-800 border border-gray-700 text-white px-4 py-3 rounded-lg focus:outline-none focus:border-eco-500 transition" required>
+                        <button type="submit" class="bg-eco-600 text-white px-4 py-3 rounded-lg font-semibold hover:bg-eco-700 transition">Langganan</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-sm">
+                <p>&copy; 2026 EcoFuture Indonesia. Hak Cipta Dilindungi. Dibuat oleh VIWON untuk Bumi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript untuk Interaksi -->
+    <script>
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-lg');
+                navbar.classList.replace('bg-white/95', 'bg-white');
+            } else {
+                navbar.classList.remove('shadow-lg');
+                navbar.classList.replace('bg-white', 'bg-white/95');
+            }
+        });
+    </script>
+</body>
+</html>
